@@ -1,0 +1,83 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(255, 180, 100);;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    background-color: #333;
+    margin-bottom: 20px;
+}
+.logo{
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    text-shadow: 1px 1px 20px red;
+
+}
+.logo:hover{
+    color: red;
+    transition: 0.9s;
+}
+.navlinks{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+.navlinks a{
+    color: white;
+    text-shadow: 0.2px 0.1px 10px blue;
+}
+.navlinks a:hover{
+    color: red;
+    transition: 0.9s;
+}
+
+.shitinfo{
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+h2{
+    color: blue;
+    text-align: center;
+    padding-bottom: 10px;
+    font-style: italic;
+}
+
+fieldset{
+    margin: 10px;
+    padding: 10px;
+    margin-bottom: 25px;
+}
+legend{
+    color: blue;
+    font-weight: bolder;
+}
+.images{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer{
+    margin-top: 20px;
+}
+.footer-info{
+    padding-left: 10px;
+}
+strong{
+    color: blue;
+    text-shadow: 1px 1px 10px white;
+}
+p{
+    margin: 10px;
+}

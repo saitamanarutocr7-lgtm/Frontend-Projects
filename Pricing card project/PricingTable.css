@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+}
+
+.navigation-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    color: white;
+    background-color: #333;
+    font-size: larger;
+}
+
+.logo {
+    font-weight: bolder;
+    margin-left: 20px;
+}
+
+.login {
+    font-weight: bolder;
+    margin-right: 20px;
+}
+
+.login:hover {
+    color: rgb(255, 221, 1);
+    transition-duration: 0.9s;
+}
+
+.navigation-bar ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.navigation-bar ul li:hover {
+    color: rgb(0, 216, 0);
+    transition-duration: 0.9s;
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    font-family: sans-serif;
+}
+
+.price-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 50px 20px;
+    margin: 0 auto;
+    gap: 30px;
+    max-width: 1200px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.price-box {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    border: 5px solid pink;
+    text-align: center;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.price-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 100px 100px rgba(0, 0, 0, 0.05);
+    border-color: rgb(252, 163, 178);
+}
+
+.price-box h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.amount {
+    font-size: 32px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #4A90E2;
+    margin-bottom: 20px;
+}
+
+.price-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 50px 0;
+    text-align: left;
+}
+
+.price-box li {
+    padding: 10px 0;
+    color: #393939;
+    font-weight: bold;
+}
+
+.price-box li::before {
+    content: ">>";
+    color: #666;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.btn {
+    margin-top: auto;
+    padding: 15px 25px;
+    background-color: #4A90E2;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #357ae9;
+}
