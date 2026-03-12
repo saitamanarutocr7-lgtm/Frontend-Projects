@@ -1,0 +1,70 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main-bentobox {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr 1fr auto 1fr 1fr;
+    grid-template-areas:
+        "box1 box1 box1 box2 box2 box2 box2"
+        "box1 box1 box1 box2 box2 box2 box2"
+        "box1 box1 box1 box3 box3 box4 box4"
+        "box5 box5 box5 box5 box6 box6 box6"
+        "box5 box5 box5 box5 box6 box6 box6";
+    gap: 20px;
+    padding: 20px;
+
+    height: 90vh;
+    max-width: 1000px;
+    margin: 0 auto;
+
+}
+
+.box1 {
+    grid-area: box1;
+}
+
+.box2 {
+    grid-area: box2;
+}
+
+.box3 {
+    grid-area: box3;
+}
+
+.box4 {
+    grid-area: box4;
+}
+
+.box5 {
+    grid-area: box5;
+}
+
+.box6 {
+    grid-area: box6;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    /* This ensures content doesn't touch the edges */
+    box-sizing: border-box; 
+    overflow: visible; /* Changed from hidden so you can see what's wrong */
+    background-color: red;
+}
+
+.card img {
+    /* Don't let images take over the whole box */
+    max-width: 100%; 
+    height: auto;
+    max-height: 150px; 
+    object-fit: contain;
+    margin: 10px 0;
+}
+.card p {
+    font-size: 0.85rem;
+    color: black;
+    margin: 0;
+}
