@@ -1,70 +1,199 @@
 * {
+    
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .main-bentobox {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: 1fr 1fr auto 1fr 1fr;
+    grid-template-rows: repeat(12, 1fr);
+
     grid-template-areas:
         "box1 box1 box1 box2 box2 box2 box2"
         "box1 box1 box1 box2 box2 box2 box2"
+        "box1 box1 box1 box2 box2 box2 box2"
+        "box1 box1 box1 box3 box3 box4 box4" 
         "box1 box1 box1 box3 box3 box4 box4"
+        "box1 box1 box1 box3 box3 box4 box4" 
+        "box1 box1 box1 box3 box3 box4 box4" 
+        "box5 box5 box5 box5 box6 box6 box6"
+        "box5 box5 box5 box5 box6 box6 box6"
+        "box5 box5 box5 box5 box6 box6 box6"
         "box5 box5 box5 box5 box6 box6 box6"
         "box5 box5 box5 box5 box6 box6 box6";
     gap: 20px;
     padding: 20px;
+    border-radius: 20px;
 
     height: 90vh;
     max-width: 1000px;
     margin: 0 auto;
+    background-color: #f9c8c8;
 
 }
 
 .box1 {
     grid-area: box1;
+    background-color: #f2e6fd;
 }
 
 .box2 {
     grid-area: box2;
+    background-color: rgb(231, 253, 231);
 }
 
 .box3 {
     grid-area: box3;
+    background-color: rgb(244, 253, 199);
 }
 
 .box4 {
     grid-area: box4;
+    background-color: rgb(208, 254, 239);
 }
 
 .box5 {
     grid-area: box5;
+    background-color: #afd0f3;
 }
 
 .box6 {
     grid-area: box6;
+    background-color: rgb(252, 238, 209);
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    padding: 24px;
+    border-radius: 20px;
+    padding-left: 24px;
     /* This ensures content doesn't touch the edges */
     box-sizing: border-box; 
     overflow: visible; /* Changed from hidden so you can see what's wrong */
-    background-color: red;
 }
 
-.card img {
-    /* Don't let images take over the whole box */
-    max-width: 100%; 
-    height: auto;
-    max-height: 150px; 
-    object-fit: contain;
-    margin: 10px 0;
-}
 .card p {
     font-size: 0.85rem;
     color: black;
     margin: 0;
+}
+
+
+
+.box1{
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+}
+.box1 p {
+    text-align: left;
+    padding-bottom: 12px;
+}
+.box1 img{
+    height: 190px;
+    width: 390px;
+    margin: 0 auto;
+}
+
+
+
+.box2{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+}
+.box2 .box2-card-content{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.box2 img{
+    margin: 0 auto;
+    width: 250px; 
+    height: 150px;
+}
+.box2 h2,
+.box2 p{
+    margin: 8px;
+}
+
+
+
+.box3{
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.box3 h2,
+.box3 p{
+    margin-bottom: 5px;
+}
+.box3 img{
+    padding-left: 75px;
+    width: 115px;
+}
+
+
+.box4{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    overflow: hidden;
+}
+.box4 img{
+    width: 190px;
+    height: 120px;
+    align-self: flex-end;
+    padding: 0%;
+}
+.box4 h2,
+.box4 p{
+    margin: 6px;
+}
+
+
+.box5{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    overflow: hidden;
+}
+.box5 img{
+    margin: 0;
+    height: 270px;
+    width: 490px;
+}
+.box5-card-content{
+    padding-top: 90px;
+}
+.box5 h2,
+.box5 p{
+    margin: 0px;
+    padding: 8px;
+}
+.box5-card-content p{
+    line-height: 1.8;
+}
+
+
+
+.box6{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.box6 img{
+    height: 200px;
+    width: 200px;
+    padding-top: 68px;
+}
+.box6 h2{
+    text-align: left;
+}
+.box6 p{
+    text-align: left;
+    line-height: 1.9;
 }
