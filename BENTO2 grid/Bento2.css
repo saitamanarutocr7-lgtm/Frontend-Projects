@@ -1,0 +1,88 @@
+body{
+    background: #d8d8d8;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.main-bentobox{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+
+    grid-template-areas: 
+    "box1 box1 box2 box2 box2 box2"
+    "box1 box1 box2 box2 box2 box2"
+    "box1 box1 box2 box2 box2 box2"
+    "box1 box1 box3 box3 box4 box4"
+    "box1 box1 box3 box3 box4 box4"
+    "box1 box1 box3 box3 box4 box4"
+    "box5 box5 box5 box5 box6 box6"
+    "box5 box5 box5 box5 box6 box6"
+    "box5 box5 box5 box5 box6 box6";
+
+    gap: 8px;
+    margin: 0 auto;
+    max-width: 80%;
+}
+
+.box1{
+    grid-area: box1;
+}
+
+.box2{
+    grid-area: box2;
+}
+
+.box3{
+    grid-area: box3;
+}
+
+.box4{
+    grid-area: box4;
+}
+
+.box5{
+    grid-area: box5;
+}
+
+.box6{
+    grid-area: box6;
+}
+
+.box{
+    background-color: white;
+    border-radius: 16px;
+    padding: 10px;
+}
+
+.box1 img{
+    width: 250px;
+}
+.box2{
+    display: flex;
+
+}
+.box2 img{
+    width: 300px;
+}
+.box3 img{
+    width: 150px;
+}
+.box4 img{
+    width: 200px;
+}
+.box5 img{
+    height: 250px;
+    width: 500px;
+}
+.box6 img{
+    width: 200px;
+}
+
+p{
+    font-weight: lighter;
+    color: #b4b4b4;
+    text-shadow: #767676;
+}
+
