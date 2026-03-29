@@ -77,3 +77,32 @@ Advanced-Bento/
 You’ve officially conquered the "Layout Mastery" week of your plan. You’ve moved from simple boxes to 3D overlaps. 
 
 **Would you like me to help you push this to GitHub with a specific commit message, or are you ready to start Week 2: Mobile-First Strategy to make this grid work on a phone?**
+
+________________________________________________________________________________________________________________________________________________
+_ _ _ _ _ _ _ __ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ __ __ _ _ _ _ _ _ __ _ _ __ _ _ _ _ _ __ _ _ _ _ __ __ _ _ _ __ _ _ __ _ __ _ _ __ _ __ _
+
+
+A high-fidelity, interactive dashboard featuring an 11-box "Bento" layout. This project focuses on breaking the grid—using 3D overlaps and negative positioning to create a modern, app-like interface.
+
+🛠️ Technical Features
+The "Grid-Break" Effect: Utilized overflow: visible and negative margins to allow 3D assets to overlap multiple grid rows.
+
+Adaptive Breakpoints: Implemented @media queries to transition from a complex 8-column desktop grid to a single-column mobile stack for better UX.
+
+Z-Index Layering: Managed stacking order to ensure 3D illustrations stay above grid borders while maintaining text readability.
+
+Fluid Architecture: Used a mix of vh/vw for the desktop "app feel" and % units for mobile flexibility.
+
+📱 Responsive Logic
+Desktop: 8-column complex grid with overlapping 3D elements.
+
+Tablet (769px – 1024px): Simplifies to a 2-column grid to preserve the Bento aesthetic on narrower screens.
+
+Mobile (<768px): Switches to a vertical flex-stack to ensure legibility on smartphones.
+
+📂 Project Structure
+Images/: 3D assets and icons.
+
+index.html: Semantic HTML5 structure.
+
+Overlapbento.css: Grid logic and media queries.

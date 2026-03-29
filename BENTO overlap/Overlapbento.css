@@ -1,8 +1,7 @@
 .main-bentobox {
     display: grid;
-    /* 12 columns give us the math we need for tiny vs wide boxes */
-    grid-template-columns: repeat(auto-fit, minmax(8, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(8, 1fr));
+    grid-template-columns: repeat(8, 1fr); /* Fixed 8 columns for your area map */
+    grid-template-rows: auto; 
     grid-template-areas:
         "box1 box1 box2 box2 box3 box3 box4 box4"
         "box1 box1 box2 box2 box3 box3 box4 box4"
@@ -13,14 +12,10 @@
         "box6 box6 box8 box8 box9 box9 box9 box9"
         "box6 box6 box8 box8 box9 box9 box9 box9";
 
-
     gap: 25px;
-    height: 150vh;
-    width: 180vh;
-    padding: 20px;
-    background-color: #000000;
-    margin: 0 auto;
-    
+    width: 90%;          /* Use % instead of vh for width */
+    max-width: 1200px;   /* Prevents it from getting too huge on 4K screens */
+    margin: 50px auto;   /* Centers the grid */
 }
 
 .box1 {
@@ -276,4 +271,58 @@
     height: 140%;
 }
 
+
+@media (max-width: 768px) {
+    .main-bentobox {
+        /* Reset height and width so it flows naturally */
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        grid-template-areas: none; /* Disable the grid areas */
+    }
+
+    .box {
+        width: 100%;
+        min-height: 250px; /* Give boxes some height */
+    }
+
+    /* Adjusting Box 5 (The Overlapping Image) for Mobile */
+    .box5 {
+        overflow: hidden !important; /* Head-pop doesn't work well in a vertical stack */
+        height: 400px;
+    }
+
+    .box5 img {
+        height: 100%;
+        width: auto;
+        margin-top: 0;
+        transform: translateX(-50%);
+    }
+
+    /* Reset font sizes for smaller screens */
+    .box1 h2, .box4 h2, .box6 h2, .box9 h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .main-bentobox {
+        width: 95vw;
+        height: auto;
+        grid-template-columns: 1fr 1fr; /* Two equal columns */
+        grid-template-areas:
+            "box1 box2"
+            "box3 box4"
+            "box5 box5" /* Feature box spans full width */
+            "box6 box7"
+            "box8 box9";
+    }
+    
+    /* Ensure the pop-out image in box 5 doesn't cover text in this layout */
+    .box5 img {
+        margin-top: -50px; 
+    }
+}
 
