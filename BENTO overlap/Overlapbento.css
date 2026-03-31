@@ -1,7 +1,8 @@
 .main-bentobox {
     display: grid;
-    grid-template-columns: repeat(8, 1fr); /* Fixed 8 columns for your area map */
-    grid-template-rows: auto; 
+    grid-template-columns: repeat(8, 1fr);
+    /* Fixed 8 columns for your area map */
+    grid-template-rows: auto;
     grid-template-areas:
         "box1 box1 box2 box2 box3 box3 box4 box4"
         "box1 box1 box2 box2 box3 box3 box4 box4"
@@ -13,9 +14,12 @@
         "box6 box6 box8 box8 box9 box9 box9 box9";
 
     gap: 25px;
-    width: 90%;          /* Use % instead of vh for width */
-    max-width: 1200px;   /* Prevents it from getting too huge on 4K screens */
-    margin: 50px auto;   /* Centers the grid */
+    width: 90%;
+    /* Use % instead of vh for width */
+    max-width: 1200px;
+    /* Prevents it from getting too huge on 4K screens */
+    margin: 50px auto;
+    /* Centers the grid */
 }
 
 .box1 {
@@ -111,6 +115,7 @@
     z-index: 10;
     /* Put her on top of other boxes */
 }
+
 .box5 img {
     width: 80%;
     height: 125%;
@@ -127,211 +132,239 @@
 }
 
 /* Small Status Icons (Moon, Lock, Circle, Star) */
-.box1{
+.box1 {
     display: flex;
     flex-direction: column;
 }
-.box1 h2{
+
+.box1 h2 {
     font-size: 3rem;
     text-align: center;
 }
-.box1 p{
+
+.box1 p {
     text-align: center;
     padding-right: 15px;
     font-size: 1.5rem;
     margin-top: 30px;
 }
 
-.box2{
+.box2 {
     display: flex;
     flex-direction: column;
 }
-.box2 h2{
+
+.box2 h2 {
     font-size: 1.3rem;
     margin-bottom: 7px
 }
-.box2 p{
+
+.box2 p {
     font-size: 1rem;
 }
-.box2 img{
+
+.box2 img {
     width: 60%;
     padding-right: 120px;
     padding-top: 8%;
 }
 
-.box3{
+.box3 {
     display: flex;
     flex-direction: column;
 }
-.box3 h2{
+
+.box3 h2 {
     text-align: end;
     font-size: 1.3rem;
-    margin-bottom: 7px 
+    margin-bottom: 7px
 }
-.box3 p{
+
+.box3 p {
     font-size: 1rem;
     text-align: end;
 }
-.box3 img{
+
+.box3 img {
     padding-top: 8%;
     padding-left: 45%;
     width: 40%;
 }
 
-.box4{
+.box4 {
     display: flex;
     flex-direction: column;
 }
-.box4 h2{
+
+.box4 h2 {
     padding-top: 8%;
     font-size: 2.3rem;
     text-align: center;
 }
-.box4 p{
+
+.box4 p {
     text-align: center;
     padding-right: 15px;
     font-size: 1.5rem;
     margin-top: 30px;
 }
 
-.box6{
+.box6 {
     display: flex;
     flex-direction: column;
 }
-.box6 h2{
+
+.box6 h2 {
     padding-top: 8%;
     font-size: 2.3rem;
     text-align: center;
 }
-.box6 p{
+
+.box6 p {
     text-align: center;
     padding-right: 15px;
     font-size: 1.5rem;
     margin-top: 30px;
 }
 
-.box7{
+.box7 {
     display: flex;
     flex-direction: column;
 }
-.box7 h2{
+
+.box7 h2 {
     font-size: 1.5rem;
     margin-bottom: 3px;
 }
-.box7 p{
+
+.box7 p {
     font-size: 1.07rem;
 }
-.box7 img{
+
+.box7 img {
     padding-left: 80px;
     width: 86%;
 }
 
 
-.box8{
+.box8 {
     display: flex;
     flex-direction: row;
 }
-.box8 h2{
+
+.box8 h2 {
     margin-bottom: 3px;
     font-size: 2rem;
 }
-.box8 p{
+
+.box8 p {
     font-size: 1.07rem;
 }
+
 .box8 h2,
-.box8 p{
+.box8 p {
     display: flex;
     flex-direction: column;
 }
-.box8 img{
+
+.box8 img {
     width: 66%;
     padding-left: 0%;
-    
+
 }
 
 
-.box9info{
+.box9info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
 .box9 {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
-.box9 h2{
+
+.box9 h2 {
     font-size: 3rem;
 }
-.box9 p{
+
+.box9 p {
     font-size: 1.4rem;
 }
-.box9 img{
+
+.box9 img {
     width: 40%;
     height: 140%;
 }
 
 
+/* --- RESPONSIVE FIXES --- */
+
+/* Tablet & Small Laptops */
+@media (max-width: 1024px) {
+    .main-bentobox {
+        width: 95%;
+        height: auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+            "box1 box2"
+            "box3 box4"
+            "box5 box5" 
+            "box6 box7"
+            "box8 box9";
+    }
+
+    .box5 {
+        min-height: 400px;
+        overflow: visible !important;
+    }
+
+    .box5 img {
+        width: 100%;
+        height: 120%; /* Keeps the 3D overlap */
+        object-fit: contain; /* THE FIX: Prevents squashing */
+        margin-top: -60px;
+    }
+}
+
+/* Mobile Phones */
 @media (max-width: 768px) {
     .main-bentobox {
-        /* Reset height and width so it flows naturally */
-        height: auto;
-        width: 100%;
         display: flex;
         flex-direction: column;
-        padding: 10px;
-        grid-template-areas: none; /* Disable the grid areas */
+        gap: 15px;
+        padding: 15px;
     }
 
     .box {
         width: 100%;
-        min-height: 250px; /* Give boxes some height */
-    }
-
-    /* Adjusting Box 5 (The Overlapping Image) for Mobile */
-    .box5 {
-        overflow: visible !important; /* Keep the 3D effect if you want, or use hidden to clip it */
-        height: 350px; /* Give it a set height so the image has room */
-        display: flex;
-        justify-content: center;
-        align-items: flex-end; /* Keeps her standing on the bottom edge */
-    }
-
-    .box5 img {
-        height: 110%; /* Makes her slightly taller than the box for the pop-out */
-        width: auto;
-        object-fit: contain; /* CRITICAL: Prevents the "squashed" look */
-        margin-top: 0;
-        margin-bottom: -5px; /* Tiny bleed at the bottom */
-        position: relative;
-        left: auto;
-        transform: none; /* Reset the desktop transform */
-    }
-
-    /* Reset font sizes for smaller screens */
-    .box1 h2, .box4 h2, .box6 h2, .box9 h2 {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 1024px) and (min-width: 769px) {
-    .main-bentobox {
-        width: 95vw;
+        min-height: 300px;
         height: auto;
-        grid-template-columns: 1fr 1fr; /* Two equal columns */
-        grid-template-areas:
-            "box1 box2"
-            "box3 box4"
-            "box5 box5" /* Feature box spans full width */
-            "box6 box7"
-            "box8 box9";
     }
-    
-    /* Ensure the pop-out image in box 5 doesn't cover text in this layout */
+
+    /* Fixing the specific "Squash" in Box 5 */
+    .box5 {
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     .box5 img {
-        margin-top: -50px; 
+        width: 100%;
+        height: 90%; 
+        object-fit: contain; /* THE FIX: Ensures original aspect ratio */
+        margin-top: 0;
+        position: relative;
+        bottom: 0;
+        transform: none;
+    }
+
+    /* Scale down the giant text for mobile */
+    .box1 h2, .box4 h2, .box6 h2, .box9 h2 {
+        font-size: 2.2rem;
     }
 }
-
-
-
