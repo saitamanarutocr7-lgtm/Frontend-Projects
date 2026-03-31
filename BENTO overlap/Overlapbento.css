@@ -107,6 +107,9 @@
 }
 
 .box5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     grid-area: box5;
     background-color: rgb(250, 194, 213);
     position: relative;
@@ -119,8 +122,6 @@
 .box5 img {
     width: 80%;
     height: 125%;
-    /* Make her slightly wider to feel "large" */
-    position: absolute;
     bottom: 0;
     /* Anchors her feet/bottom to the box */
     left: 50%;
@@ -227,9 +228,12 @@
     margin-top: 30px;
 }
 
+
 .box7 {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
 }
 
 .box7 h2 {
@@ -243,13 +247,15 @@
 
 .box7 img {
     padding-left: 80px;
-    width: 86%;
+    width: 85%;
+    margin-bottom: -15px;
 }
+
 
 
 .box8 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .box8 h2 {
@@ -268,9 +274,9 @@
 }
 
 .box8 img {
-    width: 66%;
+    width: 40%;
+    padding-top: 20px;
     padding-left: 0%;
-
 }
 
 
@@ -368,4 +374,107 @@
     .box1 h2, .box4 h2, .box6 h2, .box9 h2 {
         font-size: 2.2rem;
     }
+}
+
+
+/* The Global Smoothness */
+.box {
+    /* ... keep your existing styles ... */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.box:hover {
+    transform: translateY(-5px); /* Lift the box slightly */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    z-index: 20; /* Ensure the hovered box stays on top */
+}
+
+/* The "Floating" Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Apply this to your 3D icons (Moon, Lock, Star, etc.) */
+.box img {
+    animation: float 4s ease-in-out infinite;
+}
+/* Offset the timing so they don't all float at the exact same time */
+.box2 img { animation-delay: 0.5s; }
+.box4 img { animation-delay: 1s; }
+.box6 img { animation-delay: 1.5s; }
+
+/* Specific Interaction: Scale Up on Hover */
+.box:hover img {
+    transform: scale(1.1) translateY(-10px);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Adds a "bounce" effect */
+}
+
+/* Special Case: The Box 5 Hero */
+.box5:hover img {
+    /* Keeps the horizontal centering while adding the scale */
+    transform: translateX(-50%) scale(1.05); 
+}
+
+
+
+/* --- Functional Phase: Form Styling --- */
+.bento-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.bento-form input {
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.bento-form input:focus {
+    background: #ffffff;
+    border-color: #1a1a1a;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.bento-form button {
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background: #1a1a1a;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.bento-form button:hover {
+    background: #333;
+    transform: scale(1.02);
+}
+
+.bento-form button:active {
+    transform: scale(0.98);
+}
+
+/* Adjusting the container for the form */
+.box8 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px;
 }
