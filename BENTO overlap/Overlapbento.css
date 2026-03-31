@@ -290,15 +290,22 @@
 
     /* Adjusting Box 5 (The Overlapping Image) for Mobile */
     .box5 {
-        overflow: hidden !important; /* Head-pop doesn't work well in a vertical stack */
-        height: 400px;
+        overflow: visible !important; /* Keep the 3D effect if you want, or use hidden to clip it */
+        height: 350px; /* Give it a set height so the image has room */
+        display: flex;
+        justify-content: center;
+        align-items: flex-end; /* Keeps her standing on the bottom edge */
     }
 
     .box5 img {
-        height: 100%;
+        height: 110%; /* Makes her slightly taller than the box for the pop-out */
         width: auto;
+        object-fit: contain; /* CRITICAL: Prevents the "squashed" look */
         margin-top: 0;
-        transform: translateX(-50%);
+        margin-bottom: -5px; /* Tiny bleed at the bottom */
+        position: relative;
+        left: auto;
+        transform: none; /* Reset the desktop transform */
     }
 
     /* Reset font sizes for smaller screens */
@@ -325,4 +332,6 @@
         margin-top: -50px; 
     }
 }
+
+
 
